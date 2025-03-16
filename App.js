@@ -18,6 +18,7 @@ import {
 } from "./BuildingFunctions";
 import { collection, addDoc, setDoc, doc, getDoc } from "firebase/firestore";
 import { db } from "./firebaseConfig";
+import { Button } from "react-native";
 
 // medium article
 const LOCATION_TRACKING = "location-tracking";
@@ -156,9 +157,11 @@ export default function App() {
         setErrorMsg("Permission to access background location was denied");
         return;
       }
+      console.log(status);
 
       await startLocationTracking();
       let location = await Location.getCurrentPositionAsync({});
+      console.log(location);
       setLocation(location);
     })();
   }, []);
@@ -169,6 +172,9 @@ export default function App() {
   } else if (location) {
     text = JSON.stringify(location);
   }
+  console.log("errorMsg: " + errorMsg);
+  console.log("location: " + location);
+  console.log("new location: " + JSON.stringify(location));
 
   console.log(text);
 

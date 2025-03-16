@@ -39,3 +39,6 @@ android/
 
 # eslint config files
 eslint.config.mjs
+
+.env
+.env.local

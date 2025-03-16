@@ -27,7 +27,6 @@ export default Default = ({ navigation }) => {
         <InsightListCardView></InsightListCardView>
         <StatusBar style="auto" />
       </View>
-      <Text>Test</Text>
     </>
   );
 };
